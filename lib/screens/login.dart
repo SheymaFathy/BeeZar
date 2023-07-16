@@ -1,6 +1,7 @@
+import 'package:beezar/main.dart';
 import 'package:beezar/screens/signup.dart';
 import 'package:flutter/material.dart';
-import '../main.dart';
+import '../widgets/customContainer.dart';
 import '../widgets/custom_btn.dart';
 import '../widgets/custom_textFeild.dart';
 
@@ -15,96 +16,172 @@ class _LogInState extends State<LogIn> {
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
   var formKey = GlobalKey<FormState>();
+  bool passwordVisible = false;
+  bool Issecure = true;
 
   @override
   Widget build(BuildContext context) {
-    return Directionality(textDirection: TextDirection.rtl, child:  Scaffold(
-        body: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Center(
-            child: SingleChildScrollView(
-              child: Form(
-                key: formKey,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Center(child: Image.asset('assets/images/logoo.png', width: 200,)),
-                    Text(
-                      "تسجيل دخول",
-                      style: TextStyle(
-                          fontFamily: 'ca2',
-                          color: mainColor,
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    const SizedBox(
-                      height: 40,
-                    ),
-                    customTextFormFeild(
-                        controller: emailController,
-                        type: TextInputType.emailAddress,
-                        validate: (value) {
-                          if (value.isEmpty) {
-                            return ' الرجاء كتابة البريد الأليكتروني ';
-                          }
-                        },
-                        label: 'البريد الأليكتروني',
-                        prefix: Icons.email),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    customTextFormFeild(
-                        controller: passwordController,
-                        type: TextInputType.visiblePassword,
-                        validate: (value) {
-                          if (value.isEmpty) {
-                            return ' الرجاء كتابة كلمة المرور';
-                          }
-                        },
-                        label: 'كلمة المرور',
-                        suffix: Icons.remove_red_eye,
-                        prefix: Icons.lock),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    CustomBtn(
-                        onTapBtn: () {
-                          if (formKey.currentState!.validate()) {
+    return Directionality(
+      textDirection: TextDirection.rtl,
+      child: Scaffold(
+        backgroundColor: bgColor,
+        body: Form(
+          key: formKey,
+          child: SingleChildScrollView(
+            child: Stack(
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(
+                      top: MediaQuery.of(context).size.height * 0.20),
+                  child: CustomedContainer(
+                      100,
+                      0,
+                      0.80,
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.7,
+                        child: Container(
+                          height: MediaQuery.of(context).size.height * 0.7,
+                          child: ListView(children: [
+                            Column(
+                              children: [
+                                Center(
+                                  child: Padding(
+                                    padding: EdgeInsets.only(
+                                      top: MediaQuery.of(context).size.height *
+                                          0.08,
+                                    ),
+                                    child: Text(
+                                      "تسجيل دخول",
+                                      style: TextStyle(
+                                          color: Color.fromRGBO(13, 6, 88, 0.8),
+                                          fontSize: 37,
+                                          fontFamily: "ca1"),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Center(
+                                  child: Text(
+                                    "مرحبًا بعودتك يرجى تسجيل الدخول",
+                                    style: TextStyle(
+                                        color: Colors.black87.withOpacity(0.47),
+                                        fontSize: 13,
+                                        fontFamily: "ca1",
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                      top: MediaQuery.of(context).size.width *
+                                          0.03,
+                                      left: MediaQuery.of(context).size.width *
+                                          0.07,
+                                      right: MediaQuery.of(context).size.width *
+                                          0.07),
+                                  child: FormFields(
+                                      "البريد الاليكتروني",
+                                      Icon(Icons.email),
+                                      null,
+                                      false,
+                                      emailController),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                      top: MediaQuery.of(context).size.width *
+                                          0.03,
+                                      left: MediaQuery.of(context).size.width *
+                                          0.07,
+                                      right: MediaQuery.of(context).size.width *
+                                          0.07),
+                                  child: FormFields(
+                                      "كلمة المرور",
+                                      Icon(Icons.lock),
+                                      IconButton(
+                                        icon: Icon(
+                                          passwordVisible
+                                              ? Icons.visibility
+                                              : Icons.visibility_off,
+                                        ),
+                                        onPressed: () {
+                                          setState(() {
+                                            Issecure = !Issecure;
+                                            passwordVisible = !passwordVisible;
+                                          });
+                                        },
+                                      ),
+                                      Issecure,
+                                      passwordController),
+                                ),
+                                Padding(
+                                    padding: EdgeInsets.only(
+                                        top: MediaQuery.of(context).size.width *
+                                            0.1,
+                                        left:
+                                            MediaQuery.of(context).size.width *
+                                                0.15,
+                                        right:
+                                            MediaQuery.of(context).size.width *
+                                                0.15,
+                                        bottom:
+                                            MediaQuery.of(context).size.width *
+                                                0.001),
+                                    child: CustomBtn(
+                                      onTapBtn: () {
+                                        if (formKey.currentState!.validate()) {
+                                          Navigator.push(context,
+                                              MaterialPageRoute(builder: (context) =>   SignupPage()));
+                                        }
+                                      },
+                                      btnText: 'تأكيد',
+                                    ),
 
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const SignupPage()));
-                          }
-                        },
-                        btnText: 'تأكيــــد'),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Text(
-                          'ليس لديك حساب ؟',
-                          style: TextStyle(fontSize: 15, fontFamily: 'ca2'),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                      top: MediaQuery.of(context).size.width *
+                                          0.1,
+                                      left:
+                                      MediaQuery.of(context).size.width *
+                                          0.15,
+                                      right:
+                                      MediaQuery.of(context).size.width *
+                                          0.15,
+                                      bottom:
+                                      MediaQuery.of(context).size.width *
+                                          0.001),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      const Text(
+                                        'ليس لديك حساب ؟',
+                                        style: TextStyle(fontSize: 15, fontFamily: 'ca2'),
+                                      ),
+                                      TextButton(
+                                        onPressed: () {
+                                          Navigator.push(context,
+                                              MaterialPageRoute(builder: (context) => const SignupPage()));
+                                        },
+                                        child: const Text('سجل الآن',
+                                            style:
+                                            TextStyle(fontSize: 15, fontFamily: 'ca2')),
+                                      )
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          ],
+                          ),
                         ),
-                        TextButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const SignupPage()));
-                          },
-                          child: const Text('سجل الآن',
-                              style:
-                              TextStyle(fontSize: 15, fontFamily: 'ca2')),
-                        )
-                      ],
-                    )
-                  ],
+                      )),
                 ),
-              ),
+              ],
             ),
           ),
         ),
-    ),
+      ),
     );
   }
 }

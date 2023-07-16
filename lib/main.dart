@@ -1,8 +1,9 @@
 import 'package:beezar/screens/login.dart';
 import 'package:flutter/material.dart';
 
-Color mainColor = const Color(0xff5CB8FF);
-Color textColor = Colors.black38;
+Color mainColor = const Color.fromRGBO(13, 6, 88, 0.8);
+Color textColor = Colors.grey;
+Color? bgColor = Colors.grey[300];
 Color titleColor = Colors.black;
 
 void main() {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xff5CB8FF)),
+        colorScheme: ColorScheme.fromSeed(seedColor: Color.fromRGBO(13, 6, 88, 0.8),),
         useMaterial3: true,
       ),
       home:  LogIn(),

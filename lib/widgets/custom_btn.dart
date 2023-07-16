@@ -21,7 +21,7 @@ class CustomBtn extends StatelessWidget {
         width: double.infinity,
         height: 50,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20), color: mainColor),
+            borderRadius: BorderRadius.circular(20), color: Color.fromRGBO(13, 6, 88, 0.8),),
         child: MaterialButton(
           onPressed: onTapBtn,
           child: Text(
@@ -30,7 +30,7 @@ class CustomBtn extends StatelessWidget {
                 color: Colors.white,
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
-                fontFamily: 'ca2'),
+                fontFamily: 'ca1'),
           ),
         ),
       ),
