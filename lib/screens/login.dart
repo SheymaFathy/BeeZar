@@ -18,7 +18,7 @@ class _LogInState extends State<LogIn> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Directionality(textDirection: TextDirection.rtl, child:  Scaffold(
         body: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Center(
@@ -28,7 +28,7 @@ class _LogInState extends State<LogIn> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Image.asset('assets/images/logoo.png'),
+                    Center(child: Image.asset('assets/images/logoo.png', width: 200,)),
                     Text(
                       "تسجيل دخول",
                       style: TextStyle(
@@ -104,6 +104,7 @@ class _LogInState extends State<LogIn> {
             ),
           ),
         ),
+    ),
     );
   }
 }

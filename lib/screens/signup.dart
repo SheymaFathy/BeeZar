@@ -19,7 +19,7 @@ class _SignupPageState extends State<SignupPage> {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Directionality(textDirection: TextDirection.rtl, child: Scaffold(
         body: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Center(
@@ -29,6 +29,7 @@ class _SignupPageState extends State<SignupPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    Center(child: Image.asset('assets/images/logoo.png', width: 200,)),
                     Text(
                       "تسجيل مشترك جديد",
                       style: TextStyle(
@@ -113,6 +114,7 @@ class _SignupPageState extends State<SignupPage> {
             ),
           ),
         ),
+    ),
     );
   }
 }
