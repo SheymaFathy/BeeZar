@@ -1,6 +1,4 @@
-import 'dart:ui';
 import 'package:beezar/screens/signup.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../main.dart';
 import '../widgets/custom_btn.dart';
@@ -30,6 +28,7 @@ class _LogInState extends State<LogIn> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    Image.asset('assets/images/logoo.png'),
                     Text(
                       "تسجيل دخول",
                       style: TextStyle(
