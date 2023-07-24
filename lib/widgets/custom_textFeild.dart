@@ -45,7 +45,7 @@ class _FormFieldsState extends State<FormFields> {
             ),
           ),
           labelText: widget.myInput,
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
         ));
   }
 }

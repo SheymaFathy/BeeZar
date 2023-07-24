@@ -15,7 +15,16 @@ class CustomedContainer extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height * height,
       decoration: BoxDecoration(
-        color: Colors.white,
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors:[
+              Colors.white,
+              mainColor,
+
+            ]
+
+        ),
         borderRadius: BorderRadius.only(
             topLeft: Radius.circular(x), topRight: Radius.circular(y)),
       ),

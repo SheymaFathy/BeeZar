@@ -1,9 +1,10 @@
 import 'package:beezar/screens/login.dart';
+import 'package:beezar/screens/splashScreen.dart';
 import 'package:flutter/material.dart';
 
-Color mainColor = const Color.fromRGBO(13, 6, 88, 0.8);
-Color textColor = Colors.grey;
-Color? bgColor = Colors.grey[300];
+Color mainColor = const Color(0xff5BC0BE);
+Color? textColor = Colors.grey[600];
+Color? subTitle = Colors.grey[500];
 Color titleColor = Colors.black;
 
 void main() {
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Color.fromRGBO(13, 6, 88, 0.8),),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromRGBO(13, 6, 88, 0.8),),
         useMaterial3: true,
       ),
       home:  LogIn(),

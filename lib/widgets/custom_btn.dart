@@ -19,9 +19,11 @@ class CustomBtn extends StatelessWidget {
       padding: const EdgeInsets.all(10.0),
       child: Container(
         width: double.infinity,
-        height: 50,
+        height: 60,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20), color: Color.fromRGBO(13, 6, 88, 0.8),),
+            borderRadius: BorderRadius.circular(30),
+          color: mainColor,
+          border: Border()),
         child: MaterialButton(
           onPressed: onTapBtn,
           child: Text(
