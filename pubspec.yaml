@@ -37,6 +37,8 @@ dependencies:
   motion_toast: ^2.7.8
   get: ^4.6.5
   flutter_social_button: ^1.1.4+1
+  http: ^0.13.3
+  flutter_easyloading: ^3.0.3
 
 
 
