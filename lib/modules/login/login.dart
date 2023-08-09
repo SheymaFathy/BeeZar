@@ -1,11 +1,8 @@
 import 'package:beezar/components/custom_btn.dart';
 import 'package:beezar/components/custom_textfeild1.dart';
 import 'package:beezar/constants.dart';
-import 'package:beezar/modules/signup/signup.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
+
 
 import 'login_controller.dart';
 
@@ -40,7 +37,7 @@ class _LogInState extends State<LogIn> {
                     "مرحبًا بعودتك يرجى تسجيل الدخول الآن",
                     style: TextStyle(
                         color: itemColor,
-                        fontSize: 17,
+                        fontSize: 15,
                         fontFamily: "ca1",
                         fontWeight: FontWeight.bold),
                   ),
@@ -114,6 +111,10 @@ class _LogInState extends State<LogIn> {
                         .of(context)
                         .size
                         .width * 0.01,
+                    top: MediaQuery
+                        .of(context)
+                        .size
+                        .width * 0.03,
                   ),
                   child: Column(
                     children: [
@@ -133,7 +134,6 @@ class _LogInState extends State<LogIn> {
                         'او سجل الدخول بواسطة',
                         style: TextStyle(
                           fontFamily: 'ca1',
-                          fontWeight: FontWeight.bold,
                           color: Colors.black,
                         ),
                       ),

@@ -25,7 +25,11 @@ class CustomBtn extends StatelessWidget {
           top: MediaQuery
               .of(context)
               .size
-              .width * 0.05,
+              .width * 0.01,
+          bottom: MediaQuery
+              .of(context)
+              .size
+              .width * 0.02,
           left: MediaQuery
               .of(context)
               .size
@@ -36,7 +40,7 @@ class CustomBtn extends StatelessWidget {
               .width * 0.03),
       child: Container(
         width: double.infinity,
-        height: 50,
+        height: 45,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
           color: btnBgColor,
@@ -47,7 +51,7 @@ class CustomBtn extends StatelessWidget {
             btnText,
             style:  TextStyle(
                 color: btnTxtColor,
-                fontSize: 24,
+                fontSize: 20,
                 fontWeight: FontWeight.bold,
                 fontFamily: 'ca1'),
           ),
@@ -85,7 +89,7 @@ class faceBtn extends StatelessWidget {
               .width * 0.03),
       child: Container(
         width: double.infinity,
-        height: 50,
+        height: 45,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
             color: Color(0xff1a6ed8),
@@ -93,7 +97,7 @@ class faceBtn extends StatelessWidget {
         child: MaterialButton(
           onPressed: onTapBtn,
           child: Row(
-            mainAxisAlignment:MainAxisAlignment.spaceBetween,
+            mainAxisAlignment:MainAxisAlignment.spaceEvenly,
             children: [
               Text(
                 "فيــــسبـــوك",

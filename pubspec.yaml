@@ -86,7 +86,7 @@ flutter:
   fonts:
     - family: ca1
       fonts:
-        - asset: assets/fonts/Cairo-Regular.ttf
+        - asset: assets/fonts/arb.ttf
     - family: ca2
       fonts:
         - asset: assets/fonts/Cairo-Bold.ttf

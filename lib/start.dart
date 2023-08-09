@@ -39,7 +39,7 @@ class _StartPageState extends State<StartPage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text('مرحباً بك ',style: TextStyle(fontSize: 30, color: mainColor, fontFamily: 'ca1',fontWeight: FontWeight.bold),),
-                Center(child: Text('يرجى تسجيل الدخول أو ادخال بياناتك للاشتراك ',style: TextStyle(fontSize: 16, color: titleColor, fontFamily: 'ca1', fontWeight: FontWeight.bold),)),
+                Center(child: Text('يرجى تسجيل الدخول أو ادخال بياناتك للاشتراك ',style: TextStyle(fontSize: 16, color: titleColor, fontFamily: 'ca1'),)),
               ],
             )),
             Expanded(child: Column(
@@ -71,7 +71,7 @@ Future _signUpBottonSheet(BuildContext context){
 
           )),
       builder:(context) => Container(
-        height: 1000,
+        height: double.infinity,
         child: Padding(
           padding: EdgeInsets.only(
               top: MediaQuery

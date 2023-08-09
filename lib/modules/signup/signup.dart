@@ -40,109 +40,111 @@ class _SignupPageState extends State<SignupPage> {
 
                   Padding(
                     padding: EdgeInsets.only(
-                        top: MediaQuery.of(context).size.height * 0.02),
-                    child: ListView(
-                      children: [
-
-                        Center(
-                          child: Text(
-                            "مرحبًا بك يرجى تسجيل بياناتك الآن",
-                            style: TextStyle(
-                                color: itemColor,
-                                fontSize: 17,
-                                fontFamily: "ca1",
-                                fontWeight: FontWeight.bold),
+                        top: MediaQuery.of(context).size.height * 0.01),
+                    child: IntrinsicHeight(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Center(
+                            child: Text(
+                              "مرحبًا بك يرجى تسجيل بياناتك الآن",
+                              style: TextStyle(
+                                  color: itemColor,
+                                  fontSize: 15,
+                                  fontFamily: "ca1",
+                                  fontWeight: FontWeight.bold),
+                            ),
                           ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(
-                              top: MediaQuery.of(context).size.width * 0.03,
-                              left: MediaQuery.of(context).size.width * 0.01,
-                              right: MediaQuery.of(context).size.width * 0.01),
-                          child: FormFields("الاسم", Icon(Icons.person, ), null,
-                              false, nameController,
-                                  (value){controller.name=value;}),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(
-                              top: MediaQuery.of(context).size.width * 0.03,
-                              left: MediaQuery.of(context).size.width * 0.01,
-                              right: MediaQuery.of(context).size.width * 0.01
+                          Padding(
+                            padding: EdgeInsets.only(
+                                top: MediaQuery.of(context).size.width * 0.02,
+                                left: MediaQuery.of(context).size.width * 0.01,
+                                right: MediaQuery.of(context).size.width * 0.01),
+                            child: FormFields("الاسم", Icon(Icons.person, ), null,
+                                false, nameController,
+                                    (value){controller.name=value;}),
                           ),
-                          child: FormFields(
-                              "البريد الاليكتروني",
-                              Icon(Icons.email,),
-                              null,
-                              false,
-                              emailController,
-                                  (value){controller.email=value;}),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(
-                              top: MediaQuery.of(context).size.width * 0.03,
-                              left: MediaQuery.of(context).size.width * 0.01,
-                              right: MediaQuery.of(context).size.width * 0.01),
-                          child: FormFields(
-                              "كلمة المرور",
-                              Icon(Icons.lock,),
-                              IconButton(
-                                icon: Icon(
-                                  passwordVisible
-                                      ? Icons.visibility
-                                      : Icons.visibility_off,
+                          Padding(
+                            padding: EdgeInsets.only(
+                                top: MediaQuery.of(context).size.width * 0.02,
+                                left: MediaQuery.of(context).size.width * 0.01,
+                                right: MediaQuery.of(context).size.width * 0.01
+                            ),
+                            child: FormFields(
+                                "البريد الاليكتروني",
+                                Icon(Icons.email,),
+                                null,
+                                false,
+                                emailController,
+                                    (value){controller.email=value;}),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(
+                                top: MediaQuery.of(context).size.width * 0.02,
+                                left: MediaQuery.of(context).size.width * 0.01,
+                                right: MediaQuery.of(context).size.width * 0.01),
+                            child: FormFields(
+                                "كلمة المرور",
+                                Icon(Icons.lock,),
+                                IconButton(
+                                  icon: Icon(
+                                    passwordVisible
+                                        ? Icons.visibility
+                                        : Icons.visibility_off,
+                                  ),
+                                  onPressed: () {
+                                    setState(() {
+                                      Issecure = !Issecure;
+                                      passwordVisible = !passwordVisible;
+                                    });
+                                  },
                                 ),
-                                onPressed: () {
-                                  setState(() {
-                                    Issecure = !Issecure;
-                                    passwordVisible = !passwordVisible;
-                                  });
-                                },
-                              ),
-                              Issecure,
-                              passwordController,
-                                  (value){controller.password=value;}),
-                        ),
+                                Issecure,
+                                passwordController,
+                                    (value){controller.password=value;}),
+                          ),
 
-                        Padding(
-                          padding: EdgeInsets.only(
-                              top: MediaQuery.of(context).size.width * 0.03,
-                              left: MediaQuery.of(context).size.width * 0.01,
-                              right: MediaQuery.of(context).size.width * 0.01),
-                          child: FormFields(
-                              "العنوان",
-                              Icon(Icons.home),
-                              null,
-                              false,
-                              addressController,
-                                  (value){controller.address=value;}),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(
-                              top: MediaQuery.of(context).size.width * 0.03,
-                              left: MediaQuery.of(context).size.width * 0.01,
-                              right: MediaQuery.of(context).size.width * 0.01),
-                          child: FormFields(
-                              "رقم الهاتف المحمول",
-                              Icon(Icons.phone),
-                              null,
-                              false,
-                              phoneController,
-                                  (value){controller.phone=value;}),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(
-                            top: MediaQuery.of(context).size.width * 0.03,
-                            left: MediaQuery.of(context).size.width * 0.05,
-                            right: MediaQuery.of(context).size.width * 0.05,
+                          Padding(
+                            padding: EdgeInsets.only(
+                                top: MediaQuery.of(context).size.width * 0.02,
+                                left: MediaQuery.of(context).size.width * 0.01,
+                                right: MediaQuery.of(context).size.width * 0.01),
+                            child: FormFields(
+                                "العنوان",
+                                Icon(Icons.home),
+                                null,
+                                false,
+                                addressController,
+                                    (value){controller.address=value;}),
                           ),
-                          child: CustomBtn(
-                            onTapBtn: () {
-                              registerOnclick();
-                            },
-                            btnText: 'تأكيد', btnBgColor: btnBglight, btnTxtColor: Colors.white,
+                          Padding(
+                            padding: EdgeInsets.only(
+                                top: MediaQuery.of(context).size.width * 0.02,
+                                left: MediaQuery.of(context).size.width * 0.01,
+                                right: MediaQuery.of(context).size.width * 0.01),
+                            child: FormFields(
+                                "رقم الهاتف المحمول",
+                                Icon(Icons.phone),
+                                null,
+                                false,
+                                phoneController,
+                                    (value){controller.phone=value;}),
                           ),
-                        ),
-                      ],
+                          Padding(
+                            padding: EdgeInsets.only(
+                              top: MediaQuery.of(context).size.width * 0.02,
+                              left: MediaQuery.of(context).size.width * 0.05,
+                              right: MediaQuery.of(context).size.width * 0.05,
+                            ),
+                            child: CustomBtn(
+                              onTapBtn: () {
+                                registerOnclick();
+                              },
+                              btnText: 'تأكيد', btnBgColor: btnBglight, btnTxtColor: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
