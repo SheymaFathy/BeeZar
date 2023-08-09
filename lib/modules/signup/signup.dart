@@ -161,7 +161,7 @@ class _SignupPageState extends State<SignupPage> {
     EasyLoading.show(status: "Loading..");
     if (controller.SignUpStatuse==true) {
       await EasyLoading.showSuccess('Register Successfully');
-      Get.offNamed('/login');
+      Get.offNamed('/home');
     }
     else {
       EasyLoading.showError(controller.message);

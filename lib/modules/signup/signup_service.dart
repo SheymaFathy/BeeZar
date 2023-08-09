@@ -12,7 +12,6 @@ class SignUpService{
 
 
   Future<bool> register(NewUser user) async{
-            print("leeeeeettttttssss gggoooooo");
     var response = await http.post(
       url,
       headers: {
@@ -24,7 +23,6 @@ class SignUpService{
         'email': user.email,
         'address':user.address,
         'phone':user.phone,
-
 
       },
     );

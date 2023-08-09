@@ -8,4 +8,4 @@ Color? textColor = Colors.grey[600];
 Color? subTitle = Colors.grey[500];
 Color titleColor = Colors.black;
 Color backGroungColor = Color(0xff858585);
-Color btnBglight = Color(0xffd3d1d1);
+Color btnBglight = Color(0xfff0ebfa);

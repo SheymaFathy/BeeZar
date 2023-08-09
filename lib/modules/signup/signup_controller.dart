@@ -24,7 +24,6 @@ class SignUpController extends GetxController{
     NewUser users = NewUser(name: name, email: email, password: password, address: address, phone: phone);
 
     SignUpStatuse =await service.register(users);
-  //  message = service.error;
 
     if (message is List) {
       String temp = '';
