@@ -142,7 +142,7 @@ class _ItemDetailState extends State<ItemDetail> {
                     )),
                 CustomBtn(onTapBtn: (){
                   Get.back();
-                }, btnBgColor: mainColor,btnText: 'عودة للصفحة الرئيسية',btnTxtColor: Colors.white,),
+                }, btnBgColor: mainColor,btnText: 'عودة للصفحة السابقة',btnTxtColor: Colors.white,),
 
               ],
             ),
