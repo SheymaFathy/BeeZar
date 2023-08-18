@@ -5,7 +5,7 @@ import 'package:get/get_core/src/get_main.dart';
 
 import '../../constants.dart';
 import '../../main.dart';
-import '../Screens/homePage.dart';
+import '../Screens/category/category.dart';
 
 class Drawerr extends StatelessWidget {
   const Drawerr({super.key});

@@ -28,6 +28,7 @@ class _LogInState extends State<LogIn> {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
+        backgroundColor: Colors.white,
         body: Center(
           child: Form(
             key: formKey,

@@ -3,6 +3,7 @@ import 'package:beezar/constants.dart';
 import 'package:beezar/modules/login/login.dart';
 import 'package:beezar/modules/signup/signup.dart';
 import 'package:flutter/material.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
 
 class StartPage extends StatefulWidget {
   const StartPage({super.key});
@@ -23,13 +24,12 @@ class _StartPageState extends State<StartPage> {
                 left: MediaQuery.of(context).size.width * 0.03,
                 right: MediaQuery.of(context).size.width * 0.03),
             child: Column(
-              // mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Image.asset("assets/images/lg.png"),
                 Expanded(
                     child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
                       'مرحباً بك ',
@@ -48,25 +48,27 @@ class _StartPageState extends State<StartPage> {
                   ],
                 )),
                 Expanded(
-                    child: Column(
-                  children: [
-                    CustomBtn(
-                      onTapBtn: () {
-                        _signUpBottonSheet(context);
-                      },
-                      btnText: ('اشترك الآن '),
-                      btnBgColor: mainColor,
-                      btnTxtColor: Colors.white,
-                    ),
-                    CustomBtn(
-                      onTapBtn: () {
-                        _logInBottonSheet(context);
-                      },
-                      btnText: (' تسجيل دخول'),
-                      btnBgColor: mainColor,
-                      btnTxtColor: Colors.white,
-                    ),
-                  ],
+                    child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      CustomBtn(
+                        onTapBtn: () {
+                          _signUpBottonSheet(context);
+                        },
+                        btnText: ('اشترك الآن '),
+                        btnBgColor: mainColor,
+                        btnTxtColor: Colors.white,
+                      ),
+                      CustomBtn(
+                        onTapBtn: () {
+                          _logInBottonSheet(context);
+                        },
+                        btnText: (' تسجيل دخول'),
+                        btnBgColor: mainColor,
+                        btnTxtColor: Colors.white,
+                      ),
+                    ],
+                  ),
                 )),
               ],
             ),
@@ -82,13 +84,13 @@ Future _signUpBottonSheet(BuildContext context) {
           borderRadius: BorderRadius.vertical(
         top: Radius.circular(30),
       )),
-      builder: (context) => Container(
+      builder: (context) => SizedBox(
             height: double.infinity,
             child: Padding(
               padding: EdgeInsets.only(
                   top: MediaQuery.of(context).size.width * 0.09,
-                  left: MediaQuery.of(context).size.width * 0.1,
-                  right: MediaQuery.of(context).size.width * 0.1),
+                  left: MediaQuery.of(context).size.width * 0.02,
+                  right: MediaQuery.of(context).size.width * 0.02),
               child: SignupPage(),
             ),
           ));
@@ -97,17 +99,18 @@ Future _signUpBottonSheet(BuildContext context) {
 Future _logInBottonSheet(BuildContext context) {
   return showModalBottomSheet(
       context: context,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
         top: Radius.circular(30),
       )),
-      builder: (context) => Container(
+      builder: (context) => SizedBox(
             height: 800,
             child: Padding(
               padding: EdgeInsets.only(
                   top: MediaQuery.of(context).size.width * 0.09,
-                  left: MediaQuery.of(context).size.width * 0.1,
-                  right: MediaQuery.of(context).size.width * 0.1),
+                  left: MediaQuery.of(context).size.width * 0.02,
+                  right: MediaQuery.of(context).size.width * 0.02
+              ),
               child: LogIn(),
             ),
           ));

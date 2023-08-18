@@ -35,9 +35,8 @@ class _SignupPageState extends State<SignupPage> {
         body:  Center(
             child: Form(
               key: formKey,
-              child: Stack(
+              child: ListView(
                 children: [
-
                   Padding(
                     padding: EdgeInsets.only(
                         top: MediaQuery.of(context).size.height * 0.01),
@@ -140,7 +139,7 @@ class _SignupPageState extends State<SignupPage> {
                               onTapBtn: () {
                                 registerOnclick();
                               },
-                              btnText: 'تأكيد', btnBgColor: btnBglight, btnTxtColor: Colors.white,
+                              btnText: 'تأكيد', btnBgColor: mainColor, btnTxtColor: Colors.white,
                             ),
                           ),
                         ],
