@@ -29,7 +29,7 @@ class _ItemDetailState extends State<ItemDetail> {
                 borderRadius: BorderRadius.circular(15),
               ),
               child: IconButton(onPressed: (){
-                Navigator.of(context).pop();
+                Get.offNamed('/items');
               }, icon: Icon(Icons.arrow_back, color: itemColor,))),
           Expanded(child: Text("")),
           //..............shop card

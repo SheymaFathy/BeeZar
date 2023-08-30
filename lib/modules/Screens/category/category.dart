@@ -90,54 +90,54 @@ class _homePageState extends State<homePage> {
       drawer:Drawerr(),
       body:  Stack(
           children: [
-            FutureBuilder(
-              future: http.get(Uri.parse(ServerConfig.DNS + ServerConfig.category)),
-              builder: (context, AsyncSnapshot snapshot) {
-                if (snapshot.data  != null) {
-                  dynamic data = json.decode(snapshot.data.body);
-                  return GridView.builder(
-                    itemCount: data.length,
-                    shrinkWrap: true,
-                    physics: BouncingScrollPhysics(),
-                    itemBuilder: (context, index) {
-                      return Card(
-                        elevation: 30,
-                        child: ListView(
-                            children: [
-                              Center(
-                                  child:Text(data[index]["name"],
-                                    style: TextStyle(color: textColor, fontWeight: FontWeight.w900, fontSize: 20,fontFamily: 'ca1'),)),
-                              SizedBox(height: 10,),
-                              ClipRRect(
-                                child:
-                                GestureDetector(
-                                  child: Container(
-                                      width: 200,
-                                      height: 150,
-                                      child: Image.asset([index].toString())),
-                                  onTap:  (){
-                                    Navigator.push(context, MaterialPageRoute(builder: (contets) => SubCategoryScreen(
-                                        id:"${data[index]["id"]}",
-                                    )));
-                                  },
-                                ),
-                              ),
-                            ]
-
-                        ),
-                      );
-                    },
-                    padding: EdgeInsets.all(5.0),
-                    scrollDirection: Axis.vertical,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2),
-                  );
-
-                } else {
-                  return Text("No Connection");
-                }
-              },
-            ),
+            // FutureBuilder(
+            //   future: http.get(Uri.parse(ServerConfig.DNS + ServerConfig.category)),
+            //   builder: (context, AsyncSnapshot snapshot) {
+            //     if (snapshot.data  != null) {
+            //       dynamic data = json.decode(snapshot.data.body);
+            //       return GridView.builder(
+            //         itemCount: data.length,
+            //         shrinkWrap: true,
+            //         physics: BouncingScrollPhysics(),
+            //         itemBuilder: (context, index) {
+            //           return Card(
+            //             elevation: 30,
+            //             child: ListView(
+            //                 children: [
+            //                   Center(
+            //                       child:Text(data[index]["name"],
+            //                         style: TextStyle(color: textColor, fontWeight: FontWeight.w900, fontSize: 20,fontFamily: 'ca1'),)),
+            //                   SizedBox(height: 10,),
+            //                   ClipRRect(
+            //                     child:
+            //                     GestureDetector(
+            //                       child: Container(
+            //                           width: 200,
+            //                           height: 150,
+            //                           child: Image.asset([index].toString())),
+            //                       onTap:  (){
+            //                         Navigator.push(context, MaterialPageRoute(builder: (contets) => SubCategoryScreen(
+            //                             id:"${data[index]["id"]}",
+            //                         )));
+            //                       },
+            //                     ),
+            //                   ),
+            //                 ]
+            //
+            //             ),
+            //           );
+            //         },
+            //         padding: EdgeInsets.all(5.0),
+            //         scrollDirection: Axis.vertical,
+            //         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            //             crossAxisCount: 2),
+            //       );
+            //
+            //     } else {
+            //       return Text("No Connection");
+            //     }
+            //   },
+            // ),
           ]
       ),
     ));

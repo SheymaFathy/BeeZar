@@ -2,19 +2,24 @@ import 'package:beezar/components/custom_btn.dart';
 import 'package:beezar/components/custom_textfeild1.dart';
 import 'package:beezar/constants.dart';
 import 'package:beezar/main.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import '../signup/signup_controller.dart';
 import 'login_controller.dart';
 
 class LogIn extends StatefulWidget {
+  const LogIn({super.key});
+
   @override
   State<LogIn> createState() => _LogInState();
 }
 
 class _LogInState extends State<LogIn> {
+
   LoginController loginController = LoginController();
   var emailController = TextEditingController();
   var passwordController = TextEditingController();
@@ -114,7 +119,9 @@ class _LogInState extends State<LogIn> {
                           color: Colors.black,
                         ),
                       ),
-                      faceBtn(onTapBtn: () {}),
+                      faceBtn(onTapBtn: () {
+                        Get.offNamed('/fb');
+                      }),
                     ],
                   ),
                 ),
@@ -135,5 +142,10 @@ class _LogInState extends State<LogIn> {
       EasyLoading.showError(loginController.message);
       print(loginController.message);
     }
+  }
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('AccessToken', AccessToken));
   }
 }

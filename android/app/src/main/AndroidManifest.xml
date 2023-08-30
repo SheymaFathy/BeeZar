@@ -1,5 +1,10 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.beezar"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" tools:node="remove"/>
+
     <application
         android:label="بيزار"
         android:name="${applicationName}"
@@ -30,5 +35,25 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+<!--        facebook config-->
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="1007853157303498"/>
+        <meta-data android:name="com.facebook.sdk.ClientToken" android:value="7b5652d776e9c2697a48d4f3b94c2824"/>
+
+
+        <activity android:name="com.facebook.FacebookActivity"
+            android:configChanges=
+                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="com.example.beezar" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="com.example.beezar/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+
     </application>
 </manifest>

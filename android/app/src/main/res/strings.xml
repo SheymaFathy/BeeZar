@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    <string name="app_name">beezar</string>
+    <string name="facebook_app_id">1007853157303498</string>d
+    <string name="fb_login_protocol_scheme">fb1007853157303498</string>
+    <string name="facebook_client_token">7b5652d776e9c2697a48d4f3b94c2824</string>
+</resources>
