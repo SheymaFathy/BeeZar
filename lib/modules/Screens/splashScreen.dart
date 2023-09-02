@@ -1,13 +1,10 @@
-
-
-import 'dart:async';
-
 import 'package:another_flutter_splash_screen/another_flutter_splash_screen.dart';
-import 'package:beezar/constants.dart';
 import 'package:beezar/modules/Screens/start.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
+
+import 'chooseNb.dart';
+
+
 
 class Splash extends StatefulWidget {
   const Splash({Key? key}) : super(key: key);
@@ -22,7 +19,7 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
       body: Center(
         child:FlutterSplashScreen(
           duration: const Duration(milliseconds: 5000),
-          defaultNextScreen: const StartPage(),
+          defaultNextScreen: const chooseNavicationBar(),
           backgroundColor: Colors.white,
           splashScreenBody: Center(
             child: Column(
