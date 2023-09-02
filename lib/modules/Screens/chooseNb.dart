@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import '../../constants.dart';
+import '../add_product/add_product.dart';
 import 'category/category.dart';
 
 class chooseNavicationBar extends StatefulWidget {
@@ -13,6 +14,7 @@ class chooseNavicationBar extends StatefulWidget {
 class _chooseNavicationBarState extends State<chooseNavicationBar> {
   static  final List<Widget> _widgetOptions = <Widget>[
     homePage(),
+    addProduct(),
 
 
   ];

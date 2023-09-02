@@ -6,6 +6,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'modules/Screens/items/ItemDetail.dart';
 import 'modules/Screens/items/items.dart';
+import 'modules/Screens/splashScreen.dart';
 import 'modules/Screens/subCategory/sub_category.dart';
 import 'modules/Screens/chooseNb.dart';
 import 'modules/Screens/category/category.dart';
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: mainColor,
       ),
-      initialRoute: '/start',
+      initialRoute: '/splash',
       getPages: [
         GetPage(
             name: '/start', page: () => StartPage(),
@@ -44,6 +45,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/items', page: () => showItems()),
         GetPage(name: '/detail', page: () => ItemDetail()),
         GetPage(name: '/fb', page: ()=> faceBookLogin()),
+        GetPage(name: '/splash', page: ()=> Splash()),
 
       ],
       builder: EasyLoading.init(),

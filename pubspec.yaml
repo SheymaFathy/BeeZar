@@ -45,6 +45,7 @@ dependencies:
   google_nav_bar: ^5.0.6
   image_picker: ^1.0.2
   flutter_facebook_auth: ^6.0.1
+  another_flutter_splash_screen: ^1.1.5
 
 
 
