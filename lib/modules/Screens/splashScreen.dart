@@ -34,17 +34,9 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
                   child: Image.asset('assets/images/splashh.gif'),
                 ),
                 const Spacer(),
-                Row(
-                  mainAxisAlignment:MainAxisAlignment.center,
-                  children: [
-                    const Text(
-                      "Developed by",
-                      style: TextStyle(color:Color(0xff757575FF),fontWeight: FontWeight.bold, fontSize: 17),
-                    ),
-                    Text(" ©️ARG Group Co.",
-                      style: TextStyle(color:Color(0xff5e17eb),fontWeight: FontWeight.bold, fontSize: 17),
-                    )
-                  ],
+                const Text(
+                  "Developed by ©️ ARG Group Co.",
+                  style: TextStyle(color:Color(0xff757575FF),fontWeight: FontWeight.bold, fontSize: 17),
                 ),
                 const SizedBox(
                   height: 100,
